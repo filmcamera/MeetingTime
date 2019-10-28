@@ -137,6 +137,13 @@ def printCommonTime(DAY):
                 startTime = 2400
                 continue
 
+            # ex) 1045-1110 (25분)
+            if (int(endTime / 100) - int(startTime / 100)) == 1 :
+                tempEndTime = endTime - 100 + 60
+                if(tempEndTime - startTime) < 30 :
+                    startTime = 2400
+                    continue
+
             # endTime이 XX00꼴일 때, XX60 꼴로 변형하여 위의 if문과 똑같은 과정으로 한 번 더 검사
             if endTime % 100 == 0 :
                 tempEndTime = endTime - 100 + 60
@@ -167,7 +174,7 @@ def printCommonTime(DAY):
                 # if DAY[index] == False 조건문에서 출력하기 전 시행했던 검사와 동일
                 if (startTime != 2400) and (2060 - startTime) > 30 :        # TODO: 2060 (2100으로 넣으면 오류!!!) (끝시간) 일반화 필요
                     print('%04d-%04d' %(startTime, endTime), end = ' ')
-              
+
     print('')
 
 
