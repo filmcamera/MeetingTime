@@ -166,10 +166,9 @@ def printCommonTime(DAY):
             if index == (timeIndex - 1) :
                 # if DAY[index] == False 조건문에서 출력하기 전 시행했던 검사와 동일
                 if (startTime != 2400) and (2060 - startTime) > 30 :        # TODO: 2060 (2100으로 넣으면 오류!!!) (끝시간) 일반화 필요
-                    print('%04d-%04d' %(startTime, endTime))
-                    break
-                else :
-                    print('')
+                    print('%04d-%04d' %(startTime, endTime), end = ' ')
+              
+    print('')
 
 
 inputList = readInputTxt()
