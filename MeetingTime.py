@@ -137,7 +137,7 @@ def printCommonTime(DAY):
                 startTime = 2400
                 continue
 
-            # endTime이 ##60꼴일 때, 변형하여 위의 if문과 똑같은 과정으로 한 번 더 검사
+            # endTime이 XX00꼴일 때, XX60 꼴로 변형하여 위의 if문과 똑같은 과정으로 한 번 더 검사
             if endTime % 100 == 0 :
                 tempEndTime = endTime - 100 + 60
                 if(tempEndTime - startTime) < 30 :
@@ -158,7 +158,7 @@ def printCommonTime(DAY):
 
             # endTime은 계속 변화함
             endTime = hour + min + 5
-            # ex) 0960 -> 1000으로 만들어 줌
+            # endTime이 XX60꼴일 때, XX00 꼴로 변형. ex) 0960 -> 1000으로 만들어 줌
             if endTime % 100 == 60 :
                 endTime = endTime + 100 - 60
 
